@@ -1,5 +1,6 @@
 import Button from "../presentational/Button";
 import {useState} from "react";
+import {add, divide, minus, multiplication} from "../../services/CalculatorLogic";
 
 function CalculatorContainer() {
     const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -22,13 +23,13 @@ function CalculatorContainer() {
     const getResult = (fetchOperation: string): number => {
         switch (fetchOperation) {
             case "＋":
-                return result + currentInNumber
+                return add(result, currentInNumber)
             case "―":
-                return result - currentInNumber
+                return minus(result, currentInNumber)
             case "÷":
-                return result / currentInNumber
+                return divide(result, currentInNumber)
             case "×":
-                return result * currentInNumber
+                return multiplication(result, currentInNumber)
             default:
                 return 0
         }

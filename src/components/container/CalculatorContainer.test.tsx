@@ -126,6 +126,8 @@ describe("CalculatorContainer Component Rendering", () => {
                 const plusButton = wrapper.getByText("＋", {selector: "button"})
                 const input = wrapper.getByRole("resultText")
 
+                userEvent.click(enterButton)
+
                 expect(input).toHaveValue("0")
 
                 userEvent.click(oneButton)
